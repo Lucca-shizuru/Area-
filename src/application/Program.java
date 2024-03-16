@@ -1,4 +1,6 @@
 package application;
+
+import Entities.Triangle;
 import java.lang.Math;
 import java.util.Locale;
 import java.util.Scanner;
@@ -7,21 +9,23 @@ public class Program {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-
+        Triangle x, y ;
+        x = new Triangle();
+        y = new Triangle();
 
         System.out.println("Enter the measures of triangle X: ");
-        double xa = sc.nextDouble();
-        double xb = sc.nextDouble();
-        double xc = sc.nextDouble();
+        x.a = sc.nextDouble();
+        x.b = sc.nextDouble();
+        x.c = sc.nextDouble();
         System.out.println( "Enter the measures of triangle  Y:" );
-        double ya = sc.nextDouble();
-        double yb = sc.nextDouble();
-        double yc = sc.nextDouble();
+        y.a = sc.nextDouble();
+        y.b = sc.nextDouble();
+        y.c = sc.nextDouble();
 
-        double p = ((xa + xb + xc) / 2 );
-        double areaX = Math.sqrt( p * (p - xa ) * (p - xb ) * (p - xc ));
-        p = ((ya + yb + yc) / 2 );
-        double areaY = Math.sqrt( p * (p - ya ) * (p - yb ) * (p - yc ));
+        double p = ((x.a + x.b + x.c) / 2 );
+        double areaX = Math.sqrt( p * (p - x.a ) * (p - x.b ) * (p - x.c ));
+        p = ((y.a + y.b + y.c) / 2 );
+        double areaY = Math.sqrt( p * (p - y.a ) * (p - y.b ) * (p - y.c ));
         System.out.println( " Triangle X area: " + areaX);
         System.out.println("  Triangle Y area: " + areaY);
             if ( areaX > areaY){
@@ -30,6 +34,7 @@ public class Program {
             else {
                 System.out.println("Larger area: Y ");
             }
+
 
 
             sc.close();
